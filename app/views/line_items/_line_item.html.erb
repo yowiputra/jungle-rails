@@ -1,5 +1,4 @@
 <% product = line_item.product %>
-<% line_item_total = product.price * line_item.quantity %>
 
   <tr>
     <td>
@@ -17,6 +16,6 @@
       <%= line_item.quantity %>
     </td>
     <td>
-      <%= line_item_total %>
+      <%= line_item.total_price %>
     </td>
   </tr>

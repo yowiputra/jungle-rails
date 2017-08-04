@@ -21,9 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @order.line_items.each do |item|%>
-          <%= render partial: 'line_item', object:item %>
-        <% end %>
+        <%= render @order.line_items %>
       </tbody>
       <tfoot>
         <tr>
