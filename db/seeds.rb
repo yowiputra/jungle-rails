@@ -132,5 +132,48 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Re-creating reviews"
+
+Review.destroy_all
+
+product1 = Product.find_by name:'Red Bookshelf'
+product2 = Product.find_by name:'World\'s Largest Smartwatch'
+product3 = Product.find_by name:'Human Feet Shoes'
+
+product1.reviews.create({
+  user_id: 1,
+  description: "Great!",
+  rating: 5
+})
+
+product1.reviews.create({
+  user_id: 2,
+  description: "Good",
+  rating: 4
+})
+
+product2.reviews.create({
+  user_id: 1,
+  description: "Great!",
+  rating: 5
+})
+
+product2.reviews.create({
+  user_id: 3,
+  description: 'Sucks!',
+  rating: 0
+})
+
+product3.reviews.create({
+  user_id: 2,
+  description: 'Meh',
+  rating: 3
+})
+
+product3.reviews.create({
+  user_id: 3,
+  description: "Yeah!",
+  rating: 5
+})
 
 puts "DONE!"
