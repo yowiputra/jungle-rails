@@ -1,0 +1,15 @@
+Thanks for ordering, <%= @order.email %>!
+==========================================
+
+Here is the receipt for the recent order you did!
+
+Order ID: <%= @order.id %>
+Orders:
+
+<% @order.line_items.each do |item| %>
+  <%= item.product.name%> | Quantity: <%= item.quantity %>
+<% end %>
+
+Order Total: <%= @order.total %>
+
+Thanks for ordering and have a great day!
