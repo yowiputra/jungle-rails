@@ -27,38 +27,41 @@
     </div>
 
     <div class="row">
-      <h4>Comments</h4>
       <div class="col-sm-4">
-        <%= form_for([@product, @review]) do |f| %>
+        <% if current_user %>
+          <%= form_for([@product, @review]) do |f| %>
 
-          <% if f.object.errors.any? %>
-            <div class="alert alert-danger">
-              <strong>The following errors prevented saving:</strong>
-              <ul>
-                <% f.object.errors.full_messages.each do |error| %>
-                  <li><%= error %></li>
-                <% end %>
-              </ul>
-            </div>
+            <% if f.object.errors.any? %>
+              <div class="alert alert-danger">
+                <strong>The following errors prevented saving:</strong>
+                <ul>
+                  <% f.object.errors.full_messages.each do |error| %>
+                    <li><%= error %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <p>
+              <%= f.label :description %><br>
+              <%= f.text_area :description, size:"30x5"%>
+            </p>
+            <p>
+              <%= f.label :rating %><br>
+              <%= f.select :rating, [ 0, 1, 2, 3, 4, 5], :prompt => 'Select One' %>
+            </p>
+            <p>
+              <%= f.submit %>
+            </p>
+
           <% end %>
-
-          <p>
-            <%= f.label :description %><br>
-            <%= f.text_area :description, size:"30x5"%>
-          </p>
-          <p>
-            <%= f.label :rating %><br>
-            <%= f.select :rating, [ 0, 1, 2, 3, 4, 5], :prompt => 'Select One' %>
-          </p>
-          <p>
-            <%= f.submit %>
-          </p>
-
         <% end %>
+
       </div>
 
       <div class="col-sm-8">
         <dl class="dl-horizontal">
+          <h4>Comments</h4>
           <% @product.reviews.reverse_each do |review| %>
             <dt>Name</dt>
             <dd><%= review.user.name %></dd>
