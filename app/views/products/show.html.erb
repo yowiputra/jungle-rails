@@ -66,6 +66,11 @@
             <dd><%= review.description %></dd>
             <dt>Rating</dt>
             <dd><%= review.rating %></dd>
+            <% if current_user === review.user %>
+              <dt>
+                <%= link_to 'Delete Review', review_path(review.id), method: :delete, data:{confirm: 'Are you sure?'}%>
+              </dt>
+            <% end %>
             </br/>
           <% end %>
         </dl>

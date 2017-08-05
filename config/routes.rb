@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create] do
     delete :destroy
   end
+  resources :reviews, only: [:destroy]
 
   namespace :admin do
     root to: 'dashboard#show'
