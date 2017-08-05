@@ -1,14 +1,13 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
-
+A mini e-commerce application built with Rails 4.2 for purposes of learning Rails as part of a real-life example where a developer gets a partially working code to work-on in a new language he/she is not familiar with.
 
 ## Setup
 
 1. Fork & Clone
 2. Run `bundle install` to install dependencies
-3. Create `config/database.yml` by copying `config/database.example.yml`
-4. Create `config/secrets.yml` by copying `config/secrets.example.yml`
+3. Create `config/database.yml` by copying `config/database.yml.example`
+4. Create `config/secrets.yml` by copying `config/secrets.yml.example`
 5. Run `bin/rake db:reset` to create, load and seed db
 6. Create .env file based on .env.example
 7. Sign up for a Stripe account
@@ -21,8 +20,18 @@ Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
+## Screenshots
+
+
+
 ## Dependencies
 
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+* money-rails
+* rmagick
+* bootstrap-sass
+* bcrypt
+* font-awesome-rails
+* carrierwave
