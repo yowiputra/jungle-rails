@@ -27,10 +27,21 @@
     </div>
 
     <div class="row">
-
+      <h4>Comments</h4>
       <div class="col-sm-4">
-        <h4>Comments</h4>
-        <%= form_for([@product, @product.reviews.new]) do |f| %>
+        <%= form_for([@product, @review]) do |f| %>
+
+          <% if f.object.errors.any? %>
+            <div class="alert alert-danger">
+              <strong>The following errors prevented saving:</strong>
+              <ul>
+                <% f.object.errors.full_messages.each do |error| %>
+                  <li><%= error %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
           <p>
             <%= f.label :description %><br>
             <%= f.text_area :description, size:"30x5"%>
@@ -42,14 +53,15 @@
           <p>
             <%= f.submit %>
           </p>
+
         <% end %>
       </div>
 
       <div class="col-sm-8">
         <dl class="dl-horizontal">
-          <% @product.reviews.each do |review| %>
-            <dt>User ID</dt>
-            <dd><%= review.user_id %></dd>
+          <% @product.reviews.reverse_each do |review| %>
+            <dt>Name</dt>
+            <dd><%= review.user.name %></dd>
             <dt>Description</dt>
             <dd><%= review.description %></dd>
             <dt>Rating</dt>

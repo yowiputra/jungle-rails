@@ -159,19 +159,19 @@ product2.reviews.create({
 })
 
 product2.reviews.create({
-  user_id: 3,
+  user_id: 2,
   description: 'Sucks!',
   rating: 0
 })
 
 product3.reviews.create({
-  user_id: 2,
+  user_id: 1,
   description: 'Meh',
   rating: 3
 })
 
 product3.reviews.create({
-  user_id: 3,
+  user_id: 2,
   description: "Yeah!",
   rating: 5
 })
