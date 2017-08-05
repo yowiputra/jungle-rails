@@ -1,6 +1,8 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of learning Rails as part of a real-life example where a developer gets a partially working code to work-on in a new language he/she is not familiar with.
+A mini e-commerce web application built with Rails 4.2 for purposes of learning Rails as part of a real-life example where a developer gets a partially working code to work-on in a new language he/she is not familiar with.
+
+Jungle is built on Rails 4.2 with Stripe as the payment gateway API and PostgreSQL as its database. Bootstrap and sass are used for styling purposes.
 
 ## Setup
 
