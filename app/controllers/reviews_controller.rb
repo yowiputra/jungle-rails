@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :require_login, only: [:create]
 
   def create
     @product = Product.find(params[:product_id])
@@ -18,6 +19,12 @@ class ReviewsController < ApplicationController
   end
 
   private
+  def require_login
+    unless current_user
+      redirect_to new_session_path, notice: 'You have to be logged-in to review'
+    end
+  end
+
   def review_params
     params.require(:review).permit(:description, :rating)
   end

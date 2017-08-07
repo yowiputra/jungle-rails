@@ -27,7 +27,6 @@
     </div>
 
     <br />
-    <h4>Reviews</h4>
 
     <div class="row">
       <div class="col-sm-4">
@@ -54,7 +53,7 @@
               <%= f.select :rating, [ 0, 1, 2, 3, 4, 5], :prompt => 'Select One' %>
             </p>
             <p>
-              <%= f.submit %>
+              <%= f.submit 'Post Review', class: 'btn btn-primary btn-sm' %>
             </p>
 
           <% end %>
