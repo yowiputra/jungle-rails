@@ -18,8 +18,8 @@ RSpec.describe User, type: :model do
     @duplicateuser.password_confirmation = "1235"
 
     @capuser = User.create
-    @capuser.name = "Jiggle Rick"
-    @capuser.email = "JIGGLERICK@EXAMPLE.COM"
+    @capuser.name = "PICKLE_RICK"
+    @capuser.email = "PICKLE_RICK@EXAMPLE.COM"
     @capuser.password = "1234"
     @capuser.password_confirmation = "1234"
 
@@ -74,7 +74,7 @@ RSpec.describe User, type: :model do
 
     it "should have case-insensitive email" do
       expect(@user).to be_valid
-      expect(@capuser).to be_valid
+      expect(@capuser).to be_invalid
     end
 
     it "should have matching password and password_confirmation" do
