@@ -126,6 +126,28 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## USERS
+
+puts "Re-creating users ..."
+
+User.destroy_all
+
+user1 = User.new
+user1.name = 'Yohan'
+user1.email = 'yowiputra@gmail.com'
+user1.password = '1234'
+user1.password_confirmation = '1234'
+user1.save
+
+user2 = User.new
+user2.name = 'Test'
+user2.email = 'test@example.com'
+user2.password = '2345'
+user2.password_confirmation = '2345'
+user2.save
+
+## REVIEWS
+
 puts "Re-creating reviews"
 
 Review.destroy_all
